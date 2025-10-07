@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block body %}
+<style>
+    .menu-container {
+        margin: 2em auto;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    .menu-container h1 {
+        font-size: 2em;
+        color: #333;
+    }
+
+    .menu-container a {
+        display: block;
+        margin: 1em 0;
+        text-decoration: none;
+        color: #fff;
+        background: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .menu-container a:hover {
+        background: #0056b3;
+    }
+</style>
+
+<div class="menu-container">
+    <h1>Bienvenue aux fans de foot mais pas aux Marseillais !</h1>
+
+    <p>Connectez-vous pour profiter de toutes les fonctionnalités</p>
+
+    <a href="{{ path('app_stadium_index') }}">Voir les stades</a>
+    <a href="{{ path('app_login') }}">Connexion</a>
+</div>
+{% endblock %}

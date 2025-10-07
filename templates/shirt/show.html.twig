@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Maillot{% endblock %}
+
+{% block body %}
+    <h1>Maillot</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ shirt.id }}</td>
+            </tr>
+            <tr>
+                <th>Equipe</th>
+                <td>{{ shirt.team }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ vich_uploader_asset(shirt, 'imageFile') }}" alt="Shirt image" style="max-width: 100%; height: auto; width: 300px;"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('lockerRoom_show', {'id': shirt.lockerRoom.id}) }}" class="btn btn-outline-secondary btn-sm">retour à mon vestiaire</a><br>
+
+    <a href="{{ path('app_shirt_edit', {'id': shirt.id}) }}"" class="btn btn-warning btn-sm">modifier</a>
+
+    {{ include('shirt/_delete_form.html.twig') }}
+{% endblock %}

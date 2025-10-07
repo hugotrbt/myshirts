@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Stade{% endblock %}
+
+{% block main %}
+    <h1>Crée ton Stade</h1>
+
+    {{ include('stadium/_form.html.twig') }}
+
+    <a href="{{ path('app_stadium_index') }}" class="btn btn-outline-secondary">retour aux stades</a>
+{% endblock %} {# main #}

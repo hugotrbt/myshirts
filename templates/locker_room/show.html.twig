@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vestiaire n°{{ lockerRoom.id }}{% endblock %}
+
+{% block body %}
+<h1>Mon vestiaire</h1>
+
+{% dump lockerRoom %}
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ lockerRoom.id }}</td>
+        </tr>
+        <tr>
+            <th>Vestiaire</th>
+            <td>{{ lockerRoom.title }}</td>
+        </tr>
+        <tr>
+            <th>Maillots</th>
+            <td>
+            <ul>
+            {%  for shirt in lockerRoom.shirts %}
+            <li>
+                <a href="{{ path('app_shirt_show', {'id': shirt.id}) }}" class="text-decoration-none text-primary">{{ shirt }}</a>
+            </li>
+            {% endfor %} {# lockerRoom.shirts #}
+            </ul>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<a href="{{ path('app_shirt_new', {'id': lockerRoom.id}) }}" class="btn btn-success mb-2">Ajoute un nouveau maillot</a><br>
+<a href="{{ path('app_stadium_new', {'id': lockerRoom.id}) }}" class="btn btn-success mb-2">Ajoute un nouveau stade</a><br>
+<a href="{{ path('app_member_show', {'id': lockerRoom.member.id}) }}" class="btn btn-outline-secondary">Retour à mon profil</a>
+
+{% endblock %} {# body #}

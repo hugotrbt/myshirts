@@ -1,0 +1,12 @@
+TODO
+
+1. Rajouter des attributs sur les maillots (floquage, année, couleur...)
+
+2. Lors de la création d'un maillot, je pourrais enlever l'affichage des stades qui ne sont pas du membre.
+Même si on les sélectionne il n'est quand même pas possible de mettre le maillot dans un stade qui n'ets pas celui du membre et heuresement
+
+3. Gérer le problème d'affichage des images lors de la modification d'un maillot.
+
+4. Avoir un nom d'utilisateur pour les membres plutôt que leur email
+
+5. Gérer un processus d'inscription pour avoir de nouveaux membres

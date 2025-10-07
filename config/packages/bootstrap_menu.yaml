@@ -1,0 +1,37 @@
+bootstrap_menu:
+  menus:
+    main:
+      items:
+        stadiums:
+          label: 'Stades'
+          route: 'app_stadium_index'
+    anonymousaccount:
+      items:
+        login:
+            label: 'Connnexion'
+            route: 'app_login'
+    account:
+      items:
+        logout:
+            label: 'Déconnexion'
+            route: 'app_logout'
+            roles: [ 'ROLE_MEMBER' ]
+
+    admin:
+      items:
+        locker_rooms:
+          label: 'Vestiaires'
+          route: 'lockerRoom_list'
+        members:
+          label: 'Membres'
+          route: 'app_member_index'
+        logout:
+          label: 'Déconnexion'
+          route: 'app_logout'
+          roles: [ 'ROLE_MEMBER' ]
+
+      
+      
+      
+        
+        

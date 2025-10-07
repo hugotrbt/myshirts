@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification maillot{% endblock %}
+
+{% block body %}
+    <h1>Modification du maillot</h1>
+
+    {{ include('shirt/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_shirt_index') }}" class="btn btn-outline-secondary">Retour aux maillots</a>
+
+    {{ include('shirt/_delete_form.html.twig') }}
+{% endblock %}

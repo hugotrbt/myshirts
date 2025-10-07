@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stades{% endblock %}
+
+{% block main %}
+    <h1>Stades</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Membre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stadium in stadia %}
+            <tr>
+                <td>{{ stadium.id }}</td>
+                <td>{{ stadium.description }}</td>
+                <td>{{ stadium.creator.email }}</td>
+                <td>
+                    <a href="{{ path('app_stadium_show', {'id': stadium.id}) }}" class="btn btn-primary btn-sm">voir</a>
+                    {% if is_granted('ROLE_ADMIN') or app.user == stadium.creator%}
+                    <a href="{{ path('app_stadium_edit', {'id': stadium.id}) }}" class="btn btn-warning btn-sm">modifier</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %} {# main #}

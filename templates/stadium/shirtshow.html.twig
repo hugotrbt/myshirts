@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Maillot n°{{ shirt.id }}{% endblock %}
+
+{% block body %}
+<h1>Maillot</h1>
+
+{% dump shirt %}
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ shirt.id }}</td>
+        </tr>
+        <tr>
+            <th>Equipe</th>
+            <td>{{ shirt.team }}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td><img src="{{ vich_uploader_asset(shirt, 'imageFile') }}" alt="Shirt image" style="max-width: 100%; height: auto; width: 300px;"></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="{{ path('app_stadium_show', {'id': stadium.id}) }}" class="btn btn-outline-secondary">Retour à mon stade</a>
+
+{% endblock %} {# body #}

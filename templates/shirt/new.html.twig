@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Maillot{% endblock %}
+
+{% block body %}
+    <h1>Crée ton Maillot</h1>
+
+    {{ include('shirt/_form.html.twig') }}
+
+    <a href="{{ path('app_shirt_index') }}">Retour aux maillots</a>
+{% endblock %}

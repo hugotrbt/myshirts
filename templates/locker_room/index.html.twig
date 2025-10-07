@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes vestiaires !{% endblock %}
+
+{% block body %}
+
+<h1>Vestiaires</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for lockerRoom in lockerRooms %}
+        <tr>
+            <td>{{ lockerRoom.id }}</td>
+            <td>{{ lockerRoom.title }}</td>
+            <td><a href="{{ path('lockerRoom_show', {'id': lockerRoom.id}) }}" class="btn btn-primary btn-sm">entrer</a></td>
+        </tr>
+    {% endfor %} {# lockerRooms #}
+    </tbody>
+</table>
+
+{% endblock %} {# body #}

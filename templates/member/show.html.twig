@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block main %}
+    <h1>Mon profil</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ member.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ member.email }}</td>
+            </tr>
+            <tr>
+                <th>Vestiaire</th>
+                <td><a href="{{ path('lockerRoom_show', {'id' : member.lockerRoom.id}) }}"> mon vestiaire</a></td>
+            </tr>
+            <tr>
+                <th>Stades</th>
+                <td colspan="2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for stadium in member.stadia %}
+                                <tr>
+                                    <td>{{ stadium.description }}</td>
+                                    <td>
+                                        <a href="{{ path('app_stadium_show', {'id': stadium.id}) }}" class="btn btn-primary btn-sm">voir</a>
+                                        <a href="{{ path('app_stadium_edit', {'id': stadium.id}) }}" class="btn btn-secondary btn-sm">modifier</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="2">No stadia found</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <div>
+        <a href="{{ path('app_member_index') }}" class="btn btn-outline-secondary">retour aux membres</a><br>
+    </div>
+
+{% endblock %} {# main #}
