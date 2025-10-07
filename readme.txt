@@ -52,4 +52,4 @@ hugo@intv.fr	123456	ADMIN
 emilien@intv.fr	123456	MEMBER
 max@intv.fr	123456	MEMBER
 
-Projet développé dans le cadre du cours CSC4101 - Développement Web avec Symfony suivi à Télécom SudParis
+Projet développé dans le cadre du cours CSC4101 - Développement Web avec Symfony suivi durant ma 2ème année à Télécom SudParis
